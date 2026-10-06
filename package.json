@@ -1,0 +1,15 @@
+{
+  "name": "dsh-users-open-source-repo",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Monorepo：DeepSeek Harness 插件「开源用户」（本机带宽测速 + 一键打开工作区目录）。",
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "test": "pnpm -r test",
+    "pack:all": "pnpm -r exec pnpm pack"
+  },
+  "engines": {
+    "node": ">=22.13.0"
+  }
+}

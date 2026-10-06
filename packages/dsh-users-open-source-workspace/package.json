@@ -1,0 +1,45 @@
+{
+  "name": "dsh-users-open-source-workspace",
+  "version": "0.1.0",
+  "description": "dsh-users-open-source 的伴生包：受理 POST /dsh-users-open-source/open-workspace，在系统文件管理器里打开用户当前工作区目录（设置页「开源用户」里那颗「云端备份」按钮）。目录只从 DSH 自己的工作区账本里取，客户端只能递 sessionId；Windows 上用包内 PowerShell 脚本打开并显形（DSH 以隐藏方式启动子进程，直接 spawn explorer.exe 只会得到一个 visible=false 的隐身窗口）。它不是独立 bundle —— loader entry 由 dsh-users-open-source 的 cordis.patch.yml 插入。",
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "deepseek-harness",
+    "workspace",
+    "open-folder",
+    "explorer"
+  ],
+  "type": "module",
+  "main": "lib/index.js",
+  "exports": {
+    ".": {
+      "default": "./lib/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib",
+    "tests",
+    "README.md"
+  ],
+  "scripts": {
+    "test": "node tests/smoke.mjs"
+  },
+  "engines": {
+    "node": ">=22.13.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KAIROSLLL/dsh-users-open-source.git",
+    "directory": "packages/dsh-users-open-source-workspace"
+  },
+  "homepage": "https://github.com/KAIROSLLL/dsh-users-open-source#readme",
+  "bugs": {
+    "url": "https://github.com/KAIROSLLL/dsh-users-open-source/issues"
+  },
+  "license": "MIT"
+}

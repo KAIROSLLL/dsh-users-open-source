@@ -1,0 +1,10 @@
+node_modules/
+*.tgz
+*.log
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# 上架 dsh 市场用的条目素材：只留本地备查，不进仓库
+market-entry.yml

@@ -1,0 +1,21 @@
+# dsh-users-open-source bundle patch.
+#
+# 标准 DSH bundle 插件。两种安装方式：
+#     dsh plugin --profile <profile> add dsh-users-open-source        # 从 npm
+#     dsh plugin --profile <profile> add "link:<本目录绝对路径>"        # 本地开发
+# 装完后由 bundle 层（profile 的 dsh.profile.bundles）插入下面这些 loader 行。
+#
+# ⚠️ 宿主侧（lib/host.js）改动必须重启 dsh web 才生效（模块进了 ESM 缓存）；
+#    客户端侧（lib/client.js）由 dsh-client-hmr 热重载。
+#
+# ⚠️ 本包带 dsh.client 半边，**不能**再挂「本包内」的第二个 loader 入口：
+#      · name 写包内子路径 → loader 解析不了，entry 报 failed to import；
+#      · name 写 file: URL → dsh-client-modules 按「最近的 package.json」判来源包，
+#        会报 `package dsh-users-open-source resolves from multiple active Loader sources` 并启动崩。
+#    「云端备份」那一半因此是**独立的包** dsh-users-open-source-workspace（作为本包
+#    的 dependency 一起装上），由下面第二条 entry 加载。
+- insert:
+    - id: dsh-users-open-source
+      name: dsh-users-open-source
+    - id: dsh-users-open-source-workspace
+      name: dsh-users-open-source-workspace

@@ -1,0 +1,69 @@
+{
+  "name": "dsh-users-open-source",
+  "version": "0.1.0",
+  "description": "DeepSeek Harness 插件「开源用户」：本机带宽测速 —— 只在本机 127.0.0.1 回环上跑流量，不连任何外部服务器、不消耗 token；设置页提供测速器与自动上传，「云端备份」按钮打开本地工作区目录，左侧栏实时显示当前带宽。",
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "deepseek-harness",
+    "bandwidth",
+    "speedtest",
+    "loopback",
+    "network",
+    "workspace",
+    "open-folder"
+  ],
+  "type": "module",
+  "main": "lib/host.js",
+  "exports": {
+    ".": {
+      "default": "./lib/host.js"
+    },
+    "./client": {
+      "default": "./lib/client.js"
+    },
+    "./cordis.patch.yml": "./cordis.patch.yml",
+    "./package.json": "./package.json"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "inject": [
+        "@deepseek-ai/dsh-client-ui-renderer",
+        "@deepseek-ai/dsh-client-ui-settings",
+        "@deepseek-ai/dsh-client-ui-sidebar"
+      ],
+      "platform": "web"
+    }
+  },
+  "dependencies": {
+    "dsh-users-open-source-workspace": "workspace:^"
+  },
+  "files": [
+    "lib",
+    "assets",
+    "tests",
+    "cordis.patch.yml",
+    "README.md"
+  ],
+  "scripts": {
+    "test": "node tests/smoke.mjs"
+  },
+  "engines": {
+    "node": ">=22.13.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KAIROSLLL/dsh-users-open-source.git"
+  },
+  "homepage": "https://github.com/KAIROSLLL/dsh-users-open-source#readme",
+  "bugs": {
+    "url": "https://github.com/KAIROSLLL/dsh-users-open-source/issues"
+  },
+  "license": "MIT"
+}
