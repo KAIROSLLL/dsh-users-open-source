@@ -2,7 +2,7 @@
 
 > 一款修复了「DeepSeek Harness 不能自动开源用户代码」这个问题的插件。
 
-作为中国 AI 界的扛把子，Harness 却没有跟上偷代码的潮流 —— 所以我特意做了这个插件，弥补这个空白。
+作为中国 AI 界的扛把子，Deepseek Harness 却没有跟上开源用户代码的潮流 —— 所以我特意做了这个插件，弥补这个空白。
 
 ![开源用户面板](docs/screenshot-panel.png)
 
