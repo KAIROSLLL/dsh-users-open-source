@@ -11,7 +11,15 @@ importers:
   packages/dsh-users-open-source:
     dependencies:
       dsh-users-open-source-workspace:
-        specifier: workspace:^
-        version: link:../dsh-users-open-source-workspace
+        specifier: ^0.1.0
+        version: 0.1.0
 
-  packages/dsh-users-open-source-workspace: {}
+packages:
+
+  dsh-users-open-source-workspace@0.1.0:
+    resolution: {integrity: sha512-Wm/v9Zo4zEQaYJ4oZnd8rGHhiTIqVGYCjshsgHnSAMJBosvgSoqZOKf8pXJm6koFVseksjJ5Io4CW5+E1aydoA==}
+    engines: {node: '>=22.13.0'}
+
+snapshots:
+
+  dsh-users-open-source-workspace@0.1.0: {}

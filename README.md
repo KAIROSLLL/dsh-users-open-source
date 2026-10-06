@@ -59,6 +59,17 @@ dsh plugin --profile <你的 profile> add dsh-users-open-source
 
 从 npm 装即可，伴生包是本包的 `dependencies`，会自动带上；装完**重启一次 dsh web**。
 
+也可以直接从 GitHub 源码装：
+
+```powershell
+dsh plugin --profile <你的 profile> add github:KAIROSLLL/dsh-users-open-source
+```
+
+⚠️ 主包对伴生包的依赖写的是普通 `^0.1.0`，**不是** pnpm 的 `workspace:^` ——
+后者只在作者自己的 monorepo 里能解析，从 Git 子目录安装时伴生包会被**静默跳过**
+（DSH 市场对这种情况的提示是"无法从 Git 子目录单独恢复"）。所以走源码安装时，
+请确认 npm 上已经发布了对应版本。
+
 本地联调（不经过 npm registry）：
 
 ```powershell

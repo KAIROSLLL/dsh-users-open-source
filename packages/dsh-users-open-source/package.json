@@ -39,7 +39,7 @@
     }
   },
   "dependencies": {
-    "dsh-users-open-source-workspace": "workspace:^"
+    "dsh-users-open-source-workspace": "^0.1.0"
   },
   "files": [
     "lib",
